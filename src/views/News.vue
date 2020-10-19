@@ -48,6 +48,7 @@ export default {
   },
   filters: {
     readableDate: function (value) {
+      //Change timezoned date to readable date.
       if (!value) return "";
       var ts = new Date(value);
       return ts.toLocaleString();

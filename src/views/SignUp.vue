@@ -77,11 +77,14 @@ export default {
   },
   methods: {
     async submit() {
+      //Sign up user
       let response = await axios.post("auth/signup", this.form).catch((e) => {
         var obj = e.response.data.errors;
+        //Formating errors from object to string to display in alert.
         var result = Object.keys(obj).map(
           (key) => key + ": " + obj[key] + "\n"
         );
+        //Display validation errors in alert
         alert(result);
       });
       if (response && response.status == 200) {

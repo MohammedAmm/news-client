@@ -28,6 +28,7 @@ export default ({
   },
   actions: {
     async signIn ({ dispatch }, credentials){
+      //Call api to sign in user then store it in vuex.
       let response = await axios.post('auth/signin', credentials)
 
       return dispatch('attempt', response.data.token)
@@ -43,6 +44,7 @@ export default ({
       }
 
       try {
+        //Get user data from profile api and store it to vuex
         let response = await axios.get('auth/me')
 
         commit('SET_USER', response.data)
@@ -53,6 +55,7 @@ export default ({
     },
 
     signOut ({commit}){
+      //After sign out delete user data in vuex
       return axios.post('auth/signout').then(()=>{
         commit('SET_TOKEN', null)
         commit('SET_USER', null)

@@ -64,6 +64,7 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
+      //Using getters from state management(vuex) to get authenticated user.
     ...mapGetters({
       authenticated: "auth/authenticated",
       user: "auth/user",
@@ -72,11 +73,13 @@ export default {
 
   methods: {
     ...mapActions({
+      //Using actions from state management(vuex) to logout authenticated user.
       signOutAction: "auth/signOut",
     }),
 
     signOut() {
       this.signOutAction().then(() => {
+        //Redirect user to sign in page after signout.
         this.$router.replace({
           name: "signin",
         });

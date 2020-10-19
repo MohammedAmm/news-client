@@ -94,20 +94,19 @@ export default {
       .catch(() => {
         alert("Couldn't connect to api!");
       });
-    //Getting user's favorites
-    // await axios.get(`favorites`).then((result)=>{
-    //     this.favorites = result.data.data;
-    //     }).catch(()=>{
-    //       alert("Couldn't connect to api!")
-    //     });
+
   },
   methods: {
     async onChange() {
       //Getting top headlines based on user choice(country,category)
-      let response = await axios.get(
+      await axios.get(
         `news?country=${this.country}&category=${this.category}`
-      );
-      this.newsDataList = response.data.articles;
+      ).then((response) => {
+        this.newsDataList = response.data.articles;
+      })
+      .catch(() => {
+        alert("Couldn't connect to api!");
+      });
     },
   },
   

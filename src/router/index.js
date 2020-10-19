@@ -24,6 +24,7 @@ const routes = [
     name: 'dashboard',
     component: Dashboard,
     beforeEnter: (to, from, next) => {
+      //Simple middleware, To let users only navigate app's data if they are authenticated.
       if (!store.getters['auth/authenticated']) {
         return next({
           name: 'signin'
@@ -37,6 +38,7 @@ const routes = [
     name: 'favorites',
     component: MyFavorites,
     beforeEnter: (to, from, next) => {
+      //Simple middleware, To let users only navigate app's data if they are authenticated.
       if (!store.getters['auth/authenticated']) {
         return next({
           name: 'signin'

@@ -34,6 +34,7 @@
 
         methods: {
             favorite(news) {
+                //Sending axios call to fav a specific news.
                 axios.post('/favorites',{
                     "title" : news.title,
                     "author" : news.author,
@@ -49,6 +50,7 @@
             },
 
             unFavorite(news) {
+                //Sending axios call to unfav a specific news.
                 axios.post('/favorites?_method=delete',{
                     "title" : news.title,
                 })

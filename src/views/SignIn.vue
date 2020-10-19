@@ -46,11 +46,14 @@
         signIn: 'auth/signIn'
       }),
       submit(){
+        //Using vuex actions to sign in user.
         this.signIn(this.form).then(()=>{
+          //If user successfully signed in redirect to dashboard that contains top hotlines.
           this.$router.replace({
             name: 'dashboard'
           })
         }).catch(()=>{
+          //Display error if the email or password  wrong.
           alert("Invalid credentials failed to login!")
         })
       }
