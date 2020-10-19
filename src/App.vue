@@ -10,7 +10,11 @@
 
   export default {
     components: {
-      TheNavigation
+      TheNavigation,
     }
   }
 </script>
+
+<style>
+  @import'~bootstrap/dist/css/bootstrap.css'
+</style>
