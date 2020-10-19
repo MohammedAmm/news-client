@@ -15,3 +15,7 @@ This simple project you can use to dispaly news from news backend (Source code e
     * `npm run serve`
 * Compiles and minifies for production.
     * `npm run build`
+![Screenshot](Signup.png)
+![Screenshot](Signin.png)
+![Screenshot](News.png)
+![Screenshot](Favorites.png)
